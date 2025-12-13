@@ -1,5 +1,4 @@
 import Button from './ui/Button';
-import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -50,18 +49,9 @@ export default function Hero() {
   );
 }
 
-// Doctor Card Component - AR'DENTA Style
 function DoctorCard() {
   return (
     <div className="bg-white rounded-3xl overflow-hidden shadow-[0_16px_48px_rgba(0,0,0,0.12)] max-w-[600px] mx-auto lg:ml-auto lg:mr-0">
-      <div className="relative">
-        {/* Rating Badge */}
-        <div className="absolute top-6 right-6 bg-white px-5 py-3 rounded-2xl shadow-xl z-10">
-          <div className="text-center">
-            <div className="text-3xl font-black text-gray-900 mb-1">4.9</div>
-            <div className="text-yellow-400 text-base mb-1">★★★★★</div>
-          </div>
-        </div>
 
         {/* Doctor Photo - Right Side */}
         <div className="grid grid-cols-[auto,1fr]">
@@ -83,12 +73,10 @@ function DoctorCard() {
 
           {/* Right Side - Photo */}
           <div className="relative min-h-[450px] lg:min-h-[500px]">
-            <Image
+            <img
               src="/atikhonov.png"
               alt="Тихонов Андрей Викторович"
-              fill
-              className="object-cover"
-              priority
+              className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
         </div>
