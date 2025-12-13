@@ -17,27 +17,16 @@
   
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-coolvetica);
+    letter-spacing: 0.02em; /* Slightly increased spacing for Coolvetica */
   }
 }
 
 @layer utilities {
   .container-custom {
-    @apply max-w-[1400px] mx-auto px-10;
+    @apply max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-10 xl:px-12;
   }
   
-  .btn-primary {
-    @apply bg-primary-dark text-white px-10 py-4 rounded-full font-bold text-base 
-           transition-all duration-300 inline-flex items-center gap-3
-           shadow-[0_8px_25px_rgba(45,43,143,0.35)]
-           hover:bg-[#1f1d6b] hover:-translate-y-0.5 
-           hover:shadow-[0_12px_30px_rgba(45,43,143,0.45)];
-  }
-  
-  .btn-secondary {
-    @apply bg-primary text-white px-7 py-3 rounded-full font-semibold text-sm 
-           transition-all duration-300
-           shadow-[0_4px_15px_rgba(92,90,244,0.3)]
-           hover:bg-[#4a48d9] hover:-translate-y-0.5 
-           hover:shadow-[0_6px_20px_rgba(92,90,244,0.4)];
+  .bg-gradient-radial {
+    background-image: radial-gradient(circle, var(--tw-gradient-stops));
   }
 }
