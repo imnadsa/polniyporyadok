@@ -6,7 +6,7 @@ import Appointment from '@/components/Appointment';
 import Results from '@/components/Results';
 import Reviews from '@/components/Reviews';
 import Savings from '@/components/Savings';
-import Doctora from '@/components/Doctors';
+import Doctors from '@/components/Doctors';
 
 export default function Home() {
   return (
