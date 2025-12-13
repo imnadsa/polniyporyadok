@@ -14,11 +14,10 @@ export default function Science() {
             <div className="relative rounded-3xl overflow-hidden bg-black aspect-[9/16] shadow-lg border border-gray-100 max-w-[320px] mx-auto lg:max-w-none w-full">
               <iframe 
                 src="https://rutube.ru/play/embed/95a61ac72850acbbc68d7d0f0995fdc5" 
+                // Убрали webkitAllowFullScreen и mozallowfullscreen, оставили только стандартный:
+                allowFullScreen
                 frameBorder="0" 
                 allow="clipboard-write; autoplay" 
-                webkitAllowFullScreen 
-                mozallowfullscreen 
-                allowFullScreen 
                 className="absolute inset-0 w-full h-full"
               ></iframe>
             </div>
