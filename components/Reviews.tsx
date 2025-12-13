@@ -29,7 +29,7 @@ export default function Reviews() {
   };
 
   return (
-    <section className="pt-16 lg:pt-24 pb-32 lg:pb-48 bg-gray-50 overflow-hidden">
+    <section className="py-16 lg:py-24 bg-gray-50 overflow-hidden">
       <div className="container-custom">
         
         {/* Заголовок и Кнопки (Кнопки видны только на мобильном lg:hidden) */}
