@@ -1,4 +1,5 @@
 import Button from './ui/Button';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -82,9 +83,13 @@ function DoctorCard() {
 
           {/* Right Side - Photo */}
           <div className="relative min-h-[450px] lg:min-h-[500px]">
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-gray-400 text-sm text-center p-4">
-              [Фото - Тихонов Андрей Викторович]
-            </div>
+            <Image
+              src="/atikhonov.png"
+              alt="Тихонов Андрей Викторович"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
       </div>
