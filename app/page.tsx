@@ -5,6 +5,7 @@ import Science from '@/components/Science';
 import Appointment from '@/components/Appointment';
 import Results from '@/components/Results';
 import Reviews from '@/components/Reviews';
+import Savings from '@/components/Savings';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Info />
       <Science />
       <Appointment />
+      <Savings />
       <Results />
       <Reviews />
     </main>
