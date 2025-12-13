@@ -7,6 +7,7 @@ import Results from '@/components/Results';
 import Reviews from '@/components/Reviews';
 import Savings from '@/components/Savings';
 import Doctors from '@/components/Doctors';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Doctors />
       <Results />
       <Reviews />
+      <Footer />
     </main>
   );
 }
