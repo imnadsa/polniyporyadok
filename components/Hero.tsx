@@ -13,19 +13,28 @@ export default function Hero() {
           {/* Left Side - Text Content */}
           <div className="order-2 lg:order-1">
             {/* Main Heading */}
-            <h1 className="text-[40px] md:text-[48px] lg:text-[52px] xl:text-[58px] font-black leading-[1.1] mb-6 text-gray-900 font-heading tracking-[0.02em]">
-              Выравниваем прикус<br />
-              и создаём идеальную<br />
-              улыбку
+            <h1 className="text-[40px] md:text-[48px] lg:text-[52px] xl:text-[58px] font-black leading-[1.15] mb-8 text-gray-900 font-heading tracking-[0.02em]">
+              Выравниваем{' '}
+              <span className="inline-block px-2 pb-1 border-2 border-dashed border-[#287FB8]/40 text-[#287FB8] rounded-lg transform -rotate-1 mx-1">
+                любой прикус
+              </span>
+              <br />
+              и создаём{' '}
+              <span className="inline-block px-2 pb-1 border-2 border-dashed border-[#287FB8]/40 text-[#287FB8] rounded-lg transform rotate-1 mx-1 mt-2 lg:mt-0">
+                идеальную улыбку
+              </span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-gray-700 mb-4 leading-relaxed">
-              С заботой о комфорте. Научный подход без компромиссов.
+            <p className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
+              Под руководством{' '}
+              <span className="font-bold text-[#287FB8]">
+                лучшего ортодонта Санкт-Петербурга — Андрея Тихонова
+              </span>
             </p>
 
-            <p className="text-base md:text-lg text-gray-600 mb-10 leading-relaxed">
-              Запишитесь на бесплатную консультацию с ортодонтом уже сегодня!
+            <p className="text-base md:text-lg text-gray-600 mb-10 leading-relaxed max-w-md">
+              Запишитесь на бесплатную консультацию и получите план лечения уже на первом приеме.
             </p>
 
             {/* CTA Button - ONLY ONE */}
