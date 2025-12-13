@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Savings() {
   return (
-    <section className="bg-white py-16 lg:py-24">
+    <section className="bg-[#eef7fd] py-16 lg:py-24">
       <div className="container-custom">
         
         {/* Заголовок (Navigo, без Coolvetica) */}
