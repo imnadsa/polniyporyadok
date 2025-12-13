@@ -81,11 +81,11 @@ function DoctorCard() {
           </div>
 
           {/* Right Side - Photo */}
-          <div className="relative min-h-[450px] lg:min-h-[500px]">
+          <div className="min-h-[450px] lg:min-h-[500px] overflow-hidden">
             <img
               src="/atikhonov.png"
               alt="Тихонов Андрей Викторович"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
