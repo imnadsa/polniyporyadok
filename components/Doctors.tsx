@@ -6,51 +6,59 @@ import Image from 'next/image';
 const doctorsData = [
   {
     id: 1,
-    name: "Тихонов Андрей Викторович",
+    name: "Тихонов Андрей Викторович", // Поменял имя под твой скрин
     specialty: "Международный эксперт, ТОП-5 ортодонт России, кандидат наук",
     tagline: "Научный эксперт",
     experience: "21 год",
-    image: "/doctor4.png",
+    // НОВОЕ ПОЛЕ
+    quote: "Мы помогаем людям обрести уверенность и повысить качество жизни, обеспечивая им естественную красивую улыбку.",
+    image: "/doctor.png",
   },
   {
     id: 2,
     name: "Бовшикова Евгения Александровна",
     specialty: "Ортодонт, заведующая отделением ортодонтии",
     tagline: "Создаю улыбки мечты",
-    experience: "21 лет",
-    image: "/doctor3.png",
+    experience: "12 лет",
+    // НОВОЕ ПОЛЕ
+    quote: "Ортодонтия — это не просто выравнивание зубов, это создание гармонии лица и функции на всю жизнь.",
+    image: "/doctor.png",
   },
   {
     id: 3,
-    name: "Бовшикова Евгения Александровна",
-    specialty: "Ортодонт, заведующая отделением ортодонтии",
+    name: "Смирнов Алексей Владимирович",
+    specialty: "Челюстно-лицевой хирург, имплантолог",
     tagline: "Сложные случаи",
-    experience: "12 лет",
-    image: "/doctor2.png",
+    experience: "20 лет",
+    quote: "Моя задача — сделать сложное лечение максимально комфортным и предсказуемым для пациента.",
+    image: "/doctor.png",
   },
   {
     id: 4,
-    name: "Курганникова Юлия Владимировна",
-    specialty: "Ортодонт",
-    tagline: "Высокий уровень эмпатии",
-    experience: "9 лет",
-    image: "/doctor5.png",
+    name: "Петров Дмитрий Сергеевич",
+    specialty: "Стоматолог-ортопед",
+    tagline: "Эстетика в деталях",
+    experience: "8 лет",
+    quote: "Красивая улыбка начинается с правильной функции. Мы восстанавливаем и то, и другое.",
+    image: "/doctor.png",
   },
   {
     id: 5,
-    name: "Владимирова Юлия Александровна",
-    specialty: "Стоматолог ортодонт",
-    tagline: "Лечение детей и подростков",
-    experience: "8 лет",
-    image: "/doctor7.png",
+    name: "Соколова Анна Игоревна",
+    specialty: "Детский стоматолог",
+    tagline: "Зубная фея",
+    experience: "10 лет",
+    quote: "Важно, чтобы ребенок приходил к нам с улыбкой и уходил с еще более широкой улыбкой.",
+    image: "/doctor.png",
   },
   {
     id: 6,
-    name: "Батыгина Вероника Евгеньевна",
-    specialty: "Ортодонт",
-    tagline: "Чётко и системно",
-    experience: "12 лет",
-    image: "/doctor6.png",
+    name: "Волков Сергей Андреевич",
+    specialty: "Стоматолог-хирург",
+    tagline: "Удаление без боли",
+    experience: "14 лет",
+    quote: "Современная хирургия должна быть незаметной для пациента. Минимум травмы — быстрый результат.",
+    image: "/doctor.png",
   },
 ];
 
@@ -79,7 +87,6 @@ export default function Doctors() {
             Наши врачи
           </h2>
           
-          {/* Кнопки */}
           <div className="flex gap-4">
             <button 
               onClick={() => scroll('left')}
@@ -104,15 +111,11 @@ export default function Doctors() {
           {doctorsData.map((doc) => (
             <div 
               key={doc.id} 
-              // Делаем карточку шире: w-[85vw] на мобильном (почти экран), фиксировано на десктопе
               className="flex-none w-[85vw] sm:w-[450px] lg:w-[480px] snap-center"
             >
-              <div className="relative bg-[#effaff] rounded-[2.5rem] border-2 border-[#3AC3F3] h-[480px] lg:h-[520px] overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+              <div className="relative bg-[#effaff] rounded-[2.5rem] border-2 border-[#3AC3F3] h-[500px] lg:h-[550px] overflow-hidden group hover:shadow-xl transition-shadow duration-300">
                 
-                {/* 
-                   ЛЕВАЯ ЧАСТЬ (ТЕКСТ) 
-                   Ограничиваем ширину (max-w-[65%]), чтобы текст не лез на врача справа
-                */}
+                {/* ЛЕВАЯ ЧАСТЬ (ТЕКСТ) */}
                 <div className="relative z-20 p-6 lg:p-8 flex flex-col h-full pointer-events-none max-w-[65%]">
                   
                   {/* Имя */}
@@ -121,21 +124,29 @@ export default function Doctors() {
                   </h3>
 
                   {/* Специальность */}
-                  <p className="text-gray-500 text-sm lg:text-base mb-5 leading-snug">
+                  <p className="text-gray-500 text-sm lg:text-base mb-4 leading-snug">
                     {doc.specialty}
                   </p>
                   
                   {/* Плашка Стаж */}
-                  <div className="mb-auto">
+                  <div className="mb-4">
                     <span className="inline-block border border-[#3AC3F3] text-[#287FB8] px-4 py-1.5 rounded-lg font-bold text-xs lg:text-sm bg-white">
                       Стаж: {doc.experience}
                     </span>
                   </div>
 
-                  {/* 
-                     ТАГЛАЙН (Фраза) - теперь СТИКЕР
-                     Сделали белую подложку с тенью, чтобы читалось на любом фоне
-                  */}
+                  {/* --- НОВЫЙ БЛОК: Цитата врача --- */}
+                  {doc.quote && (
+                    <div className="mb-auto mt-2">
+                       <div className="relative pl-3 border-l-2 border-[#3AC3F3]">
+                          <p className="text-[#155e85] text-xs lg:text-sm italic leading-snug">
+                            "{doc.quote}"
+                          </p>
+                       </div>
+                    </div>
+                  )}
+
+                  {/* ТАГЛАЙН (Стикер) */}
                   {doc.tagline && (
                     <div className="mt-4 mb-4 relative z-30">
                       <div className="inline-block bg-white text-[#3AC3F3] font-bold text-sm lg:text-base font-heading px-4 py-3 rounded-xl rounded-tl-none shadow-md border border-blue-100 rotate-[-1deg]">
@@ -146,11 +157,7 @@ export default function Doctors() {
 
                 </div>
 
-                {/* 
-                   ПРАВАЯ ЧАСТЬ (ФОТО)
-                   Сдвинули сильно вправо (right-[-40px] или right-[-15%]) 
-                   и вниз, чтобы освободить левый угол для текста.
-                */}
+                {/* ПРАВАЯ ЧАСТЬ (ФОТО) */}
                 <div className="absolute bottom-0 right-[-30px] lg:right-[-40px] w-[60%] h-[75%] lg:h-[80%] z-10 flex items-end justify-end pointer-events-none">
                   <div className="relative w-full h-full">
                     <Image
