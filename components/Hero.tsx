@@ -33,13 +33,9 @@ export default function Hero() {
               </span>
             </p>
 
-            <p className="text-base md:text-lg text-gray-600 mb-10 leading-relaxed max-w-md">
-              Запишитесь на бесплатную консультацию и получите план лечения уже на первом приеме.
-            </p>
-
             {/* CTA Button - ONLY ONE */}
             <Button href="#appointment">
-              Бесплатная консультация
+              Записаться на консультацию
             </Button>
           </div>
 
