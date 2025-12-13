@@ -1,4 +1,4 @@
-мimport Link from 'next/link';
+import Link from 'next/link';
 
 interface ButtonProps {
   children: React.ReactNode;
