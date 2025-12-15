@@ -1,7 +1,7 @@
 'use client';
 
-import React, import Image from 'next/image';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 
 interface BeforeAfterProps {
   beforeImage: string;
@@ -54,26 +54,24 @@ export default function BeforeAfter({ beforeImage, afterImage }: BeforeAfterProp
   return (
     <div 
       ref={containerRef}
-      // ИЗМЕНЕНИЕ 1: Пропорции стали 16:9
       className="relative w-full aspect-video overflow-hidden select-none cursor-ew-resize group rounded-t-[2rem]"
       onMouseDown={onMouseDown}
       onTouchStart={onTouchStart}
     >
-      {/* 1. ФОТО "ПОСЛЕ" (Нижний слой) */}
+      {/* 1. ФОТО "ПОСЛЕ" */}
       <Image 
         src={afterImage} 
         alt="После" 
         fill 
         className="object-cover pointer-events-none"
-        priority // Важно для LCP
+        priority
       />
       
-      {/* 2. ФОТО "ДО" (Верхний слой, обрезается) */}
+      {/* 2. ФОТО "ДО" */}
       <div 
         className="absolute top-0 left-0 h-full overflow-hidden"
         style={{ width: `${sliderPosition}%` }}
       >
-        {/* ИЗМЕНЕНИЕ 2: Убран хак с широким div, теперь картинка не будет "зумиться" */}
         <Image 
           src={beforeImage} 
           alt="До" 
@@ -83,8 +81,7 @@ export default function BeforeAfter({ beforeImage, afterImage }: BeforeAfterProp
         />
       </div>
 
-      {/* 3. ГОЛУБАЯ ЛИНИЯ (Разделитель) */}
-      {/* ИЗМЕНЕНИЕ 3: Линия стала жирнее (w-1 = 4px) */}
+      {/* 3. ГОЛУБАЯ ЛИНИЯ */}
       <div 
         className="absolute top-0 bottom-0 w-1 bg-[#3BC3F3] z-20 pointer-events-none"
         style={{ left: `${sliderPosition}%` }}
