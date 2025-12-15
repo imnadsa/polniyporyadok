@@ -11,7 +11,7 @@ export default function Info() {
             У нас нет практикантов и стажёров
           </div>
           <h2 className="text-2xl lg:text-5xl font-black text-gray-900 font-heading leading-tight max-w-4xl">
-            Каждый врач имеет высшую категорию, а результаты говорят сами за себя:
+            Врачи со средним опытом >10 лет, а результаты говорят сами за себя:
           </h2>
         </div>
 
