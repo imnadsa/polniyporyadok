@@ -30,3 +30,16 @@
     background-image: radial-gradient(circle, var(--tw-gradient-stops));
   }
 }
+
+/* --- СТИЛИ ДЛЯ ВЫДЕЛЕНИЯ ТЕКСТА --- */
+/* (Добавь этот блок в самый конец) */
+
+::selection {
+  background-color: #F7D146; /* Ярко-желтый */
+  color: #1F2937;          /* Темно-серый текст */
+}
+
+::-moz-selection {
+  background-color: #F7D146;
+  color: #1F2937;
+}
