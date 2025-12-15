@@ -16,7 +16,7 @@ export default function Appointment() {
 
           {/* --- 3D ЭЛЕМЕНТЫ (Декор) --- */}
           
-          {/* 1. Брелок СЛЕВА СВЕРХУ (Улетел выше и левее) */}
+          {/* 1. Брелок СЛЕВА СВЕРХУ */}
           <div className="absolute top-[-30px] left-[-30px] lg:top-[-40px] lg:left-[-40px] w-32 h-32 lg:w-48 lg:h-48 rotate-[-25deg] blur-[2px] z-10 pointer-events-none opacity-80">
             <Image 
               src="/logo-keychain.png" 
@@ -26,7 +26,7 @@ export default function Appointment() {
             />
           </div>
 
-          {/* 2. Брелок ПО ЦЕНТРУ (Между текстом и формой, развернут) */}
+          {/* 2. Брелок ПО ЦЕНТРУ */}
           <div className="absolute top-[45%] left-[50%] lg:left-[48%] -translate-x-1/2 -translate-y-1/2 w-20 h-20 lg:w-24 lg:h-24 rotate-[45deg] z-10 pointer-events-none hidden lg:block opacity-90 drop-shadow-lg">
              <Image 
               src="/logo-keychain.png" 
@@ -36,7 +36,7 @@ export default function Appointment() {
             />
           </div>
 
-           {/* 3. Брелок СПРАВА СВЕРХУ (Над формой) */}
+           {/* 3. Брелок СПРАВА СВЕРХУ */}
            <div className="absolute top-[-20px] right-[5%] lg:right-[15%] w-20 h-20 lg:w-28 lg:h-28 rotate-[160deg] blur-[1px] opacity-80 z-10 pointer-events-none">
              <Image 
               src="/logo-keychain.png" 
@@ -46,8 +46,7 @@ export default function Appointment() {
             />
           </div>
 
-          {/* 4. ПОДАРОК (Торчит ТОЛЬКО БАНТИК) */}
-          {/* Утопили еще сильнее: -bottom-40 lg:-bottom-64 */}
+          {/* 4. ПОДАРОК */}
           <div className="absolute -bottom-32 lg:-bottom-64 left-1/2 lg:left-[42%] -translate-x-1/2 w-64 h-64 lg:w-96 lg:h-96 z-20 pointer-events-none">
              <Image 
               src="/present.png" 
@@ -63,7 +62,7 @@ export default function Appointment() {
             
             {/* ЛЕВАЯ ЧАСТЬ (Офферы) */}
             <div>
-              {/* Заголовок (Темно-синий вместо черного) */}
+              {/* Заголовок */}
               <h2 className="text-3xl lg:text-5xl font-black text-[#155e85] font-heading leading-tight mb-8">
                 Международный уровень Ортодонтии
               </h2>
@@ -111,18 +110,16 @@ export default function Appointment() {
                   />
                 </div>
 
-                {/* Чекбоксы (Кликабельные, цвет #2274a4) */}
+                {/* Чекбоксы */}
                 <div className="space-y-3">
                   <label className="flex items-start gap-3 cursor-pointer group select-none">
                     <div className="relative flex items-center mt-0.5">
                       <input type="checkbox" className="peer sr-only" />
-                      {/* Рамка */}
                       <div className="w-5 h-5 border-2 border-[#2274a4] rounded bg-white peer-checked:bg-[#2274a4] transition-all"></div>
-                      {/* Галочка */}
                       <svg className="absolute w-3 h-3 text-white left-1 top-1 opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </div>
                     <span className="text-xs text-[#5c8ca5] leading-tight group-hover:text-[#2274a4] transition-colors font-medium">
-                      Я согласен на <a href="#" className="underline decoration-[#8cb8d6] hover:text-[#2274a4]">Обработку персональных данных</a>
+                      Я согласен на <a href="https://xn--d1ajebkedbcem2k7b.xn--p1ai/polzovatelskoe_soglashenie/" target="_blank" className="underline decoration-[#8cb8d6] hover:text-[#2274a4]">Обработку персональных данных</a>
                     </span>
                   </label>
 
@@ -133,15 +130,14 @@ export default function Appointment() {
                       <svg className="absolute w-3 h-3 text-white left-1 top-1 opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </div>
                     <span className="text-xs text-[#5c8ca5] leading-tight group-hover:text-[#2274a4] transition-colors font-medium">
-                      Я ознакомлен с <a href="#" className="underline decoration-[#8cb8d6] hover:text-[#2274a4]">Условиями сбора данных</a>
+                      Я ознакомлен с <a href="https://xn--d1ajebkedbcem2k7b.xn--p1ai/about/" target="_blank" className="underline decoration-[#8cb8d6] hover:text-[#2274a4]">Общей информацией</a>
                     </span>
                   </label>
                 </div>
 
-                {/* Кнопка (Синяя #2274a4) */}
+                {/* Кнопка */}
                 <button className="w-full py-4 rounded-xl bg-[#2274a4] hover:bg-[#1b5c82] text-white font-bold text-lg shadow-[0_8px_25px_rgba(34,116,164,0.3)] hover:shadow-[0_10px_30px_rgba(34,116,164,0.4)] hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 relative overflow-hidden group">
                   <span className="relative z-10">Записаться на консультацию</span>
-                  {/* Блик на кнопке */}
                   <div className="absolute top-0 -left-full w-1/2 h-full bg-white/20 -skew-x-[20deg] group-hover:animate-shine"></div>
                 </button>
 
