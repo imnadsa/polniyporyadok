@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useRef, useEffect, useCallback } from 'react';
-import Image from 'next/image';
+import React, inport Image from 'next/image';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 interface BeforeAfterProps {
   beforeImage: string;
@@ -54,57 +54,49 @@ export default function BeforeAfter({ beforeImage, afterImage }: BeforeAfterProp
   return (
     <div 
       ref={containerRef}
-      className="relative w-full aspect-[4/3] overflow-hidden select-none cursor-ew-resize group rounded-t-[2rem]"
+      // ИЗМЕНЕНИЕ 1: Пропорции стали 16:9
+      className="relative w-full aspect-video overflow-hidden select-none cursor-ew-resize group rounded-t-[2rem]"
       onMouseDown={onMouseDown}
       onTouchStart={onTouchStart}
     >
-      {/* 1. ФОТО "ПОСЛЕ" */}
+      {/* 1. ФОТО "ПОСЛЕ" (Нижний слой) */}
       <Image 
         src={afterImage} 
         alt="После" 
         fill 
         className="object-cover pointer-events-none"
+        priority // Важно для LCP
       />
       
-      {/* 2. ФОТО "ДО" */}
+      {/* 2. ФОТО "ДО" (Верхний слой, обрезается) */}
       <div 
         className="absolute top-0 left-0 h-full overflow-hidden"
         style={{ width: `${sliderPosition}%` }}
       >
-        <div className="relative w-full h-full">
-           <div className="absolute inset-0 w-[200vw] lg:w-[1000px] h-full pointer-events-none"> 
-             <Image 
-              src={beforeImage} 
-              alt="До" 
-              fill 
-              className="object-cover object-left"
-            />
-           </div>
-        </div>
+        {/* ИЗМЕНЕНИЕ 2: Убран хак с широким div, теперь картинка не будет "зумиться" */}
+        <Image 
+          src={beforeImage} 
+          alt="До" 
+          fill
+          className="object-cover object-left pointer-events-none"
+          priority
+        />
       </div>
 
-      {/* 3. ГОЛУБАЯ ЛИНИЯ */}
+      {/* 3. ГОЛУБАЯ ЛИНИЯ (Разделитель) */}
+      {/* ИЗМЕНЕНИЕ 3: Линия стала жирнее (w-1 = 4px) */}
       <div 
-        className="absolute top-0 bottom-0 w-[2px] bg-[#3BC3F3] z-20 pointer-events-none"
+        className="absolute top-0 bottom-0 w-1 bg-[#3BC3F3] z-20 pointer-events-none"
         style={{ left: `${sliderPosition}%` }}
       ></div>
 
-      {/* 4. КРУГЛАЯ КНОПКА (УВЕЛИЧЕННАЯ) */}
+      {/* 4. КРУГЛАЯ КНОПКА */}
       <div 
-        /* 
-           ИЗМЕНЕНИЯ ЗДЕСЬ:
-           Было: w-10 h-10 lg:w-12 lg:h-12
-           Стало: w-14 h-14 lg:w-16 lg:h-16 (Круг стал больше)
-        */
         className="absolute top-1/2 -translate-y-1/2 w-14 h-14 lg:w-16 lg:h-16 bg-[#3BC3F3] rounded-full flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.2)] z-30 pointer-events-none transform -translate-x-1/2"
         style={{ left: `${sliderPosition}%` }}
       >
         {/* Стрелочки */}
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* 
-             ИЗМЕНЕНИЯ ЗДЕСЬ:
-             Увеличил отступ (translate) с 3 до 6, чтобы стрелки разъехались 
-          */}
           <path d="M14 16L10 12L14 8" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" transform="translate(-6, 0)"/>
           <path d="M10 16L14 12L10 8" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" transform="translate(6, 0)"/>
         </svg>
