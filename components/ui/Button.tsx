@@ -19,7 +19,7 @@ export default function Button({
   const baseStyles = "inline-flex items-center gap-1 group";
 
   // Цвета
-  const colorStyles = "bg-[#287FB8] hover:bg-[#206a9c] text-white";
+  const colorStyles = "bg-[#E7B9D1] hover:bg-[#F0B7D2] text-white";
 
   const content = (
     <>
